@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology — UAE Activity Pulse</title>
+  <meta name="description" content="How UAE Activity Pulse filters, reconciles and interprets public-data signals.">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta property="og:title" content="Methodology — UAE Activity Pulse">
+  <meta property="og:description" content="How UAE Activity Pulse filters, reconciles and interprets public-data signals.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">
+<svg viewBox="0 0 32 32" fill="none">
+  <path d="M5 17h5l2.3-6.2 4.1 12.5 3.3-8.4 2.1 2.1H27" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+      <span>UAE Activity Pulse</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/reports/commercial-leasing-2026-09-21.html" >Latest</a>
+      <a href="/archive/" >Archive</a>
+      <a href="/methodology/" aria-current='page'>Methodology</a>
+      <a href="/about/" >About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Methodology</div>
+      <h1>Transparent enough to challenge.</h1>
+      <p>The goal is not to make public data look more precise than it is. Every report documents what is included, what is excluded and where interpretation should remain cautious.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Commercial Leasing Pulse</h2>
+      <p>The first live signal uses Dubai Land Department rent-registration exports. We are interested specifically in newly registered <strong>physical commercial premises</strong>.</p>
+
+      <div class="code-filter">VERSION_EN = New
+USAGE_EN = Commercial
+PROP_TYPE_EN = Unit
+TOTAL_PROPERTIES = 1</div>
+
+      <p>Virtual units and multi-property registrations are excluded. Commercial subtypes such as Office, Shop, Warehouse and Hotel are retained for analysis.</p>
+
+      <h2>Why area-level analysis comes first</h2>
+      <p>Area coverage in the rent data is much more complete than project attribution. In addition, one lease event can occasionally appear against multiple project names. We therefore treat area as the primary geographic unit and use project-level attribution only where it is unambiguous.</p>
+
+      <h2>Deduplication</h2>
+      <p>The public weekly rent export does not expose a stable contract identifier. When rows are identical across the lease-event fields but differ only in project attribution, they are treated as one lease event for area-level counts.</p>
+
+      <h2>What “movement” means</h2>
+      <p>With only a few weeks of history, a sharp increase or decrease is described as a <strong>weekly movement</strong>, not a structural trend. Longer history will allow each location to be compared against its own seasonal and historical baseline.</p>
+
+      <h2>Residential side signals</h2>
+      <p>Residential analysis uses single-property physical Unit/Villa registrations and is kept separate from the commercial publication. The hypothesis is that repeated new-tenancy registrations may eventually help identify occupancy, handover or mover activity.</p>
+
+      <h2>Data provenance</h2>
+      <p>Current reports are built from Dubai Land Department open real-estate data collected and reconciled by us. The long-term ingestion plan is to pull directly from the official DLD source and preserve immutable daily snapshots so the publication does not depend on a third-party dataset.</p>
+
+      <h2>Corrections</h2>
+      <p>Public source data can be revised. UAE Activity Pulse may update historical figures when a later official export changes recently published registrations. Where revisions materially affect an earlier conclusion, the report should note the correction.</p>
+
+      <div class="callout warning"><p><strong>Important:</strong> These reports describe observed public-data activity. They are not investment advice, market forecasts, or proof that an individual business is opening, closing or purchasing a specific product.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p><strong>UAE Activity Pulse</strong> is an independent public-data experiment. It is not affiliated with Dubai Land Department or any UAE government entity.</p>
+    <p>Public data. Practical signals.</p>
+  </div>
+</footer>
+</body></html>

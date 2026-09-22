@@ -1,60 +1,70 @@
-# UAE Activity Pulse — V1
+# UAE Activity Pulse
 
-A dependency-free static website for publishing recurring UAE public-data reports.
+UAE Activity Pulse is an independent public-data project that turns recurring UAE government datasets into concise signals about real-world activity.
 
-## Structure
+The goal is simple:
 
-- `public/index.html` — homepage
-- `public/reports/` — full weekly reports
-- `public/archive/` — report archive
-- `public/methodology/` — methodology and limitations
-- `public/about/` — project positioning
-- `public/assets/styles.css` — site styling
-- `public/_headers` — basic security headers for Cloudflare Pages
+> Preserve public data over time, detect what changed, and publish useful observations.
 
-## Recommended Cloudflare Pages deployment
+## Current coverage
 
-Because this project is intended to receive weekly automated updates, use **Git integration from the start** rather than Cloudflare Pages Direct Upload.
+### Dubai Commercial Leasing Pulse
 
-1. Create a GitHub repository, e.g. `uae-activity-pulse`.
-2. Copy the contents of this folder into the repository.
-3. In Cloudflare: **Workers & Pages → Create → Pages → Connect to Git**.
-4. Select the repository.
-5. Build command: leave blank.
-6. Build output directory: `public`
-7. Deploy.
+A weekly view of newly registered physical commercial leases in Dubai, including:
 
-Cloudflare will give you a `*.pages.dev` URL.
+- total new physical commercial leases
+- office, shop, warehouse and other property types
+- most active areas
+- week-on-week movements
+- persistent activity patterns
+- selected residential occupancy signals
 
-### Custom domain later
+Virtual units and multi-property registrations are excluded from the core commercial analysis.
 
-A custom domain can be attached later from the Pages project's **Custom domains** section. The existing `pages.dev` URL can remain active or be redirected later.
+## Other signals being explored
 
-## Weekly publishing workflow
+- Construction activity
+- Residential occupancy / mover signals
+- Other Emirates
+- Additional UAE public datasets
 
-V1 is intentionally static.
+## Methodology
 
-For each new report:
-1. Add a new HTML page under `public/reports/`.
-2. Add it to `public/archive/index.html`.
-3. Update the homepage latest numbers / observations.
-4. Commit and push.
-5. Cloudflare Pages redeploys automatically.
+The project prioritizes:
 
-The next automation step can generate these pages directly from the weekly analysis output.
+- transparent filtering
+- preserving recurring snapshots
+- separating observed movement from long-term trends
+- documenting data limitations
+- using official public sources wherever possible
 
-## Design direction
+Full methodology is published on the website.
 
-- Editorial/data-publication rather than SaaS dashboard
-- Broad brand: can cover multiple Emirates and multiple domains
-- Current live signal: Dubai Commercial Leasing
-- Construction Activity: experimental
-- Residential Occupancy: exploratory
-- No external fonts, JavaScript frameworks, trackers or paid dependencies
+## Data sources
 
-## Before public launch
+Current reports use publicly available data from the Dubai Land Department.
 
-Optional additions:
-- Add an email/contact destination if desired.
-- Add analytics only if useful; Cloudflare Web Analytics is enough for V1.
-- Add a custom domain later.
+UAE Activity Pulse is an independent project and is not affiliated with Dubai Land Department or any UAE government entity.
+
+## Website
+
+The website is a lightweight static site designed for Cloudflare Pages.
+
+Main files:
+
+- `public/index.html`
+- `public/reports/`
+- `public/archive/`
+- `public/methodology/`
+- `public/about/`
+
+## Deployment
+
+The site can be deployed directly from this GitHub repository using Cloudflare Pages.
+
+Build command: none
+
+Output directory:
+
+```text
+public
